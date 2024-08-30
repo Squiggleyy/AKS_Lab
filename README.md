@@ -11,9 +11,13 @@ az aks get-credentials --resource-group <RG> --name <CLUSTER NAME> --overwrite-e
 Download repo, add it to helm, & install the operator:
 
 git clone https://github.com/jgibbons-cp/datadog
+
 helm repo add datadog https://helm.datadoghq.com
+
 helm repo update
+
 kubectl create ns datadog && kubectl config set-context --current --namespace=datadog
+
 helm install dd-operator datadog/datadog-operator
 
 If you get “Error while getting hostname” error, may need to add environment variable that specifies 
