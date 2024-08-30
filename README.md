@@ -5,8 +5,13 @@ __________
 
 Change context to your AKS cluster, if necessary:
 
+--
+
 az account set --subscription <SUBSCRIPTION ID>
+
 az aks get-credentials --resource-group <RG> --name <CLUSTER NAME> --overwrite-existing
+
+--
 
 Download repo, add it to helm, & install the operator:
 
